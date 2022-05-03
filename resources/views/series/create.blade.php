@@ -6,6 +6,7 @@ Adicionar Séries
 
 @section('conteudo')
 <form method="post">
+    @csrf
     <div class="form-group mb-2">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" class="form-control" name="nome" id="nome">
