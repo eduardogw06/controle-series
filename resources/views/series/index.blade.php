@@ -15,13 +15,19 @@
         @foreach($series as $serie)
             <li class="list-group-item d-flex justify-content-between btn-sm">
                 {{ $serie->nome }}
-                <form method="post" action="/series/{{ $serie->id }}" onsubmit="return confirm('Tem certeza?')">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger">
-                        <i class="far fa-trash-alt"></i>
-                    </button>
-                </form>
+
+                <span class="d-flex">
+                    <a href="series/{{ $serie->id }}/temporadas" class="btn btn-info btn-sm me-1">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <form method="post" action="/series/{{ $serie->id }}" onsubmit="return confirm('Tem certeza?')">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </form>
+                </span>
             </li>
         @endforeach
     </ul>
